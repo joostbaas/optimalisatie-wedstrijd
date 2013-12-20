@@ -13,6 +13,13 @@ Input
 -----
 Van elk dossier is bekend welke set meldingen getriggerd wordt en hoeveel bladen er in het dossier zitten. Hiervan wordt een testset ter beschikking gesteld, in de vorm van een tekstbestand.
 
+|dossier\melding|aantal bladen|*PER-001|*SGN-103|*SGN-104|*SLD-02|
+|:--------------|------------:|:------:|:------:|:------:|:-----:|
+|Amsterdam Singelgracht Westhaven|4|1|||
+|'s-Heer Arendskerke|7|||1|1|
+|Almelo - Hengelo|9||1|1||
+
+
 Output
 ------
 Het programma logt elke minuut wat de op dat moment de beste oplossing is die tot dan toe gevonden is, wat het aantal bladen in de set is, en welke set het betreft. Zie onderstaand voorbeeld.
