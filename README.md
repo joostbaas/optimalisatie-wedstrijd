@@ -40,6 +40,6 @@ Overige bepalingen
 *	Je mag zelf kiezen of je je oplossing in java schrijft of iets anders, maar als je java kiest hoef je alleen het algoritme zelf te schrijven, en wordt het verwerken van input en output voor je afgehandeld. De interface waar je aan moet voldoen wordt beschikbaar gesteld (maar die kan nog wel licht wijzigen, tot maximaal een dag voor de deadline).
 *	De logregels moeten wel kloppen, en worden gecontroleerd. Als het opgegeven aantal bladen in de swods niet overeenkomt met het werkelijke aantal geldt voor die regel een score van 0.
 *	Alle programma’s worden gedraaid op dezelfde machine, het is nog niet bekend welke.
-*	De werkelijke input zal anders zijn dan de testset, maar zal uiteraard wel dezelfde structuur hebben.  De testset heeft 100 regels (dossiers) en X kolommen (meldingen), de werkelijke input heeft 600 regels en 105 kolommen.
+*	De werkelijke input zal anders zijn dan de testset, maar zal uiteraard wel dezelfde structuur hebben.  De testset heeft 100 regels (dossiers) en 74 kolommen (meldingen), de werkelijke input heeft 600 regels en 105 kolommen.
 *	Wanneer een inzending niet voldoet aan alle bepalingen, wordt het programma uitgesloten van deelname.
 
