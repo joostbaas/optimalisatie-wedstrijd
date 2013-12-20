@@ -31,15 +31,15 @@ Het programma logt elke minuut wat de op dat moment de beste oplossing is die to
 
 Score
 -----
-De score voor een inzending wordt bepaald door de kwaliteit te wegen van de oplossingen die op verschillende momenten na de start van het algoritme beschikbaar komen. Is op zo’n moment nog geen oplossing beschikbaar die alle meldingen dekt, dan wordt voor die oplossing 0 punten gerekend. tverwerking staat voor de verwerkingstijd van de geselecteerde set dossiers.
+De score voor een inzending wordt bepaald door de kwaliteit te wegen van de oplossingen die op verschillende momenten na de start van het algoritme beschikbaar komen. Is op zo’n moment nog geen oplossing beschikbaar die alle meldingen dekt, dan wordt voor die oplossing 0 punten gerekend. bladen staat voor de verwerkingstijd van de geselecteerde set dossiers.
 
 |Moment|    Score|	Weging|
 |------|---------|--------|
-|1 minuut|	1800/tverwerking|	5|
-|5 minuten|	1800/tverwerking|	20|
-|30 minuten|	1800/tverwerking|	50|
-|2 uur|	1800/tverwerking|	20|
-|24 uur|	1800/tverwerking|	5|
+|1 minuut|	1800/bladen|	5|
+|5 minuten|	1800/bladen|	20|
+|30 minuten|	1800/bladen|	50|
+|2 uur|	1800/bladen|	20|
+|24 uur|	1800/bladen|	5|
 
 Overige bepalingen
 ------------------
