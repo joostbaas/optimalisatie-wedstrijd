@@ -49,7 +49,17 @@ public class SetCoverProblemTest {
 		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
 
 		assertThat(setCoverProblem.isSolution(solution), is(true));
+	}
 
+	@Test
+	public void isNotASolution() {
+		Set<Swod> swods = new HashSet<Swod>();
+		swods.add(new Swod("A", 1));
+		SetCoverSolution solution = new SetCoverSolution(swods);
+
+		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
+
+		assertThat(setCoverProblem.isSolution(solution), is(false));
 	}
 
 }
