@@ -12,9 +12,9 @@ public class Swod {
 		this.aantalBladen = aantalBladen;
 	}
 
-	// public String getDossierNaam() {
-	// return dossierNaam;
-	// }
+	public String getDossierNaam() {
+		return dossierNaam;
+	}
 
 	public int getAantalBladen() {
 		return aantalBladen;
@@ -43,5 +43,10 @@ public class Swod {
 	@Override
 	public int hashCode() {
 		return Objects.hashCode(dossierNaam, aantalBladen);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s (%d)", getDossierNaam(), getAantalBladen());
 	}
 }

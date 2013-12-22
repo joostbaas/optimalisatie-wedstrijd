@@ -1,6 +1,7 @@
 package nl.loxia.optimalisatie.api;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -21,5 +22,10 @@ public class SwodTest {
 
 		assertThat(swod2, equalTo(swod1));
 		assertThat(swod1.hashCode(), equalTo(swod2.hashCode()));
+	}
+
+	@Test
+	public void testToString() {
+		assertThat(new Swod("A", 1).toString(), is("A (1)"));
 	}
 }
