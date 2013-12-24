@@ -2,7 +2,7 @@ package nl.loxia.optimalisatie.api;
 
 import com.google.common.base.Objects;
 
-public class Swod {
+public class Swod implements Comparable<Swod> {
 
 	private final String dossierNaam;
 	private final int aantalBladen;
@@ -44,5 +44,10 @@ public class Swod {
 	@Override
 	public String toString() {
 		return String.format("%s (%d)", getDossierNaam(), getAantalBladen());
+	}
+
+	@Override
+	public int compareTo(Swod o) {
+		return dossierNaam.compareTo(o.dossierNaam);
 	}
 }

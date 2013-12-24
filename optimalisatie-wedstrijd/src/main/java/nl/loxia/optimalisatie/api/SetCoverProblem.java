@@ -18,7 +18,7 @@ public class SetCoverProblem {
 		return swodNaarMeldingen.keySet();
 	}
 
-	public Set<String> getMeldingen() {
+	public Set<String> getAlleMeldingen() {
 		Set<String> result = new TreeSet<String>();
 		for (List<String> meldingen : swodNaarMeldingen.values()) {
 			result.addAll(meldingen);
@@ -31,7 +31,11 @@ public class SetCoverProblem {
 		for (Swod swod : candidate.getSwods()) {
 			alleMeldingenInSolution.addAll(swodNaarMeldingen.get(swod));
 		}
-		return alleMeldingenInSolution.equals(getMeldingen());
+		return alleMeldingenInSolution.equals(getAlleMeldingen());
+	}
+
+	public Set<String> getMeldingen(Swod swod) {
+		return new HashSet<String>(swodNaarMeldingen.get(swod));
 	}
 
 }

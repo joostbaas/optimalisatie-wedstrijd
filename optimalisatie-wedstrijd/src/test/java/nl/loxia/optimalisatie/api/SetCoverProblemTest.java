@@ -33,12 +33,21 @@ public class SetCoverProblemTest {
 	}
 
 	@Test
-	public void getMeldingen() {
+	public void getAlleMeldingen() {
 		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
 
 		Set<String> expected = new HashSet<String>(asList("AAA-001", "AAA-002",
 				"AAA-003"));
-		assertThat(setCoverProblem.getMeldingen(), is(expected));
+		assertThat(setCoverProblem.getAlleMeldingen(), is(expected));
+	}
+
+	@Test
+	public void getMeldingenVoorSwod() {
+		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
+
+		Set<String> expected = new HashSet<String>(asList("AAA-001", "AAA-002"));
+		assertThat(setCoverProblem.getMeldingen(new Swod("A", 1)), is(expected));
+
 	}
 
 	@Test

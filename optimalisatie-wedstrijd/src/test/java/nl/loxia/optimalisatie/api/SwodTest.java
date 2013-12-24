@@ -9,14 +9,17 @@ import org.junit.Test;
 
 public class SwodTest {
 
+	private static final Swod SWOD_A = new Swod("A", 1);
+	private static final Swod SWOD_B = new Swod("B", 1);
+
 	@Test
 	public void equalsEnHashCode() {
-		Swod swod1 = new Swod("A", 1);
-		Swod swod2 = new Swod("A", 1);
+		Swod swod1 = SWOD_A;
+		Swod swod2 = SWOD_A;
 
 		assertThat(swod1, equalTo(swod2));
 		assertThat(swod1, not(equalTo(new Swod("A", 2))));
-		assertThat(swod1, not(equalTo(new Swod("B", 1))));
+		assertThat(swod1, not(equalTo(SWOD_B)));
 		assertThat(swod1, not(equalTo(new Object())));
 		assertThat(swod1, not(equalTo(null)));
 
@@ -26,6 +29,13 @@ public class SwodTest {
 
 	@Test
 	public void testToString() {
-		assertThat(new Swod("A", 1).toString(), is("A (1)"));
+		assertThat(SWOD_A.toString(), is("A (1)"));
+	}
+
+	@Test
+	public void testCompare() {
+		assertThat(SWOD_A.compareTo(SWOD_B), is(-1));
+		assertThat(SWOD_B.compareTo(SWOD_A), is(1));
+		assertThat(SWOD_A.compareTo(SWOD_A), is(0));
 	}
 }
