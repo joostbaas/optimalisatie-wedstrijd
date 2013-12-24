@@ -27,12 +27,8 @@ public class Swod {
 
 		if (obj instanceof Swod) {
 			Swod casted = (Swod) obj;
-			result = result
-					&& java.util.Objects
-							.equals(dossierNaam, casted.dossierNaam);
-			result = result
-					&& java.util.Objects.equals(aantalBladen,
-							casted.aantalBladen);
+			result = result && Objects.equal(dossierNaam, casted.dossierNaam);
+			result = result && Objects.equal(aantalBladen, casted.aantalBladen);
 		} else {
 			result = false;
 		}
