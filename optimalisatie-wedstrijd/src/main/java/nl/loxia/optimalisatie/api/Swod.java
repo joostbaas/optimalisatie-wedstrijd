@@ -28,10 +28,10 @@ public class Swod {
 		if (obj instanceof Swod) {
 			Swod casted = (Swod) obj;
 			result = result
-					&& java.util.Objects
-							.equals(dossierNaam, casted.dossierNaam);
+					&& Objects
+							.equal(dossierNaam, casted.dossierNaam);
 			result = result
-					&& java.util.Objects.equals(aantalBladen,
+					&& Objects.equal(aantalBladen,
 							casted.aantalBladen);
 		} else {
 			result = false;
