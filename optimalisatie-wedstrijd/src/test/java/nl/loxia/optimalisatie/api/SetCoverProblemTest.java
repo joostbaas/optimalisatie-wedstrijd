@@ -1,7 +1,9 @@
 package nl.loxia.optimalisatie.api;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.HashMap;
@@ -12,6 +14,8 @@ import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.google.common.collect.ImmutableMap;
 
 public class SetCoverProblemTest {
 
@@ -69,6 +73,36 @@ public class SetCoverProblemTest {
 		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
 
 		assertThat(setCoverProblem.isSolution(solution), is(false));
+	}
+
+	@Test
+	public void equalsEnHashCode() {
+		SetCoverProblem setCoverProblem1 = new SetCoverProblem(
+				swodNaarMeldingen);
+		SetCoverProblem setCoverProblem2 = new SetCoverProblem(
+				swodNaarMeldingen);
+
+		assertThat(setCoverProblem1, equalTo(setCoverProblem2));
+		assertThat(setCoverProblem2, equalTo(setCoverProblem1));
+
+		Map<Swod, List<String>> otherMap = ImmutableMap.of(
+				new Swod("Other", 1), asList("AAA-001", "AAA-002"));
+		assertThat(setCoverProblem1,
+				not(equalTo(new SetCoverProblem(otherMap))));
+
+		assertThat(setCoverProblem2.hashCode(),
+				equalTo(setCoverProblem1.hashCode()));
+	}
+
+	@Test
+	public void hashCodeKanNietVeranderen() {
+		SetCoverProblem setCoverProblem = new SetCoverProblem(swodNaarMeldingen);
+		int hashCodeVoor = setCoverProblem.hashCode();
+
+		swodNaarMeldingen.put(new Swod("F", 2), asList("een"));
+
+		int hashCodeNa = setCoverProblem.hashCode();
+		assertThat(hashCodeVoor, equalTo(hashCodeNa));
 	}
 
 }

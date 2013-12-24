@@ -6,12 +6,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.ImmutableMap;
+
 public class SetCoverProblem {
 
 	private final Map<Swod, List<String>> swodNaarMeldingen;
 
 	public SetCoverProblem(Map<Swod, List<String>> swodNaarMeldingen) {
-		this.swodNaarMeldingen = swodNaarMeldingen;
+		this.swodNaarMeldingen = swodNaarMeldingen = ImmutableMap
+				.copyOf(swodNaarMeldingen);
 	}
 
 	public Set<Swod> getSwods() {
@@ -36,6 +40,32 @@ public class SetCoverProblem {
 
 	public Set<String> getMeldingen(Swod swod) {
 		return new HashSet<String>(swodNaarMeldingen.get(swod));
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+
+		boolean result = true;
+		result = result && obj != null;
+
+		if (obj instanceof SetCoverProblem) {
+			SetCoverProblem casted = (SetCoverProblem) obj;
+			result = result
+					&& Objects.equal(swodNaarMeldingen,
+							casted.swodNaarMeldingen);
+			result = result
+					&& Objects.equal(swodNaarMeldingen,
+							casted.swodNaarMeldingen);
+		} else {
+			result = false;
+		}
+
+		return result;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(swodNaarMeldingen);
 	}
 
 }
