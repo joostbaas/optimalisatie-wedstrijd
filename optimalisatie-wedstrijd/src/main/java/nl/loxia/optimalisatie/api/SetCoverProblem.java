@@ -1,5 +1,6 @@
 package nl.loxia.optimalisatie.api;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public class SetCoverProblem {
 	private final Map<Swod, List<String>> swodNaarMeldingen;
 
 	public SetCoverProblem(Map<Swod, List<String>> swodNaarMeldingen) {
-		this.swodNaarMeldingen = swodNaarMeldingen = ImmutableMap
+		this.swodNaarMeldingen = ImmutableMap
 				.copyOf(swodNaarMeldingen);
 	}
 
@@ -39,7 +40,8 @@ public class SetCoverProblem {
 	}
 
 	public Set<String> getMeldingen(Swod swod) {
-		return new HashSet<String>(swodNaarMeldingen.get(swod));
+		List<String> meldingen = swodNaarMeldingen.get(swod);
+		return meldingen == null ? Collections.EMPTY_SET : new HashSet<String>(meldingen);
 	}
 
 	@Override

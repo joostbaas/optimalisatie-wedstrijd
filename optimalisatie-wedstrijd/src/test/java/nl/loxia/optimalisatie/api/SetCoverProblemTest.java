@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.empty;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,6 +18,7 @@ import org.junit.Test;
 
 import com.google.common.collect.ImmutableMap;
 
+@SuppressWarnings("static-method")
 public class SetCoverProblemTest {
 
 	private final Map<Swod, List<String>> swodNaarMeldingen = new HashMap<Swod, List<String>>();
@@ -51,7 +53,13 @@ public class SetCoverProblemTest {
 
 		Set<String> expected = new HashSet<String>(asList("AAA-001", "AAA-002"));
 		assertThat(setCoverProblem.getMeldingen(new Swod("A", 1)), is(expected));
+	}
 
+	@Test
+	public void getMeldingenVoorNietBestaandSwod() {
+		SetCoverProblem setCoverProblem = new SetCoverProblem(new HashMap<Swod, List<String>>());
+		
+		assertThat(setCoverProblem.getMeldingen(new Swod("A", 1)), is(empty()));
 	}
 
 	@Test

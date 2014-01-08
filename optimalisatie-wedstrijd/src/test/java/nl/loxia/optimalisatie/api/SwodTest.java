@@ -7,6 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
+@SuppressWarnings("static-method")
 public class SwodTest {
 
 	private static final Swod SWOD_A = new Swod("A", 1);
